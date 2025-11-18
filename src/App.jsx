@@ -17,6 +17,7 @@ import DonationForm from './pages/DonationForm';
 import DistributionForm from './pages/DistributionForm';
 import Inventory from './pages/Inventory';
 import Reports from './pages/Reports';
+import AboutUs from './pages/Aboutus';
 
 export default function App() {
   const { isAdmin, logout } = useDonation();
@@ -58,7 +59,7 @@ export default function App() {
             <Button component={Link} to="/" sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
               Home
             </Button>
-            <Button component={Link} to="/about" sx={{ pathname: '/' }} sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
+            <Button component={Link} to="/AboutUs" sx={{ pathname: '/' }} sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
               About Us
             </Button>
             <Button component={Link} to={isAdmin ? "/admin" : "/login"} sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
@@ -219,6 +220,7 @@ export default function App() {
           <Route path="/distribute" element={isAdmin ? <DistributionForm /> : <Navigate to="/login" />} />
           <Route path="/inventory" element={isAdmin ? <Inventory /> : <Navigate to="/login" />} />
           <Route path="/reports" element={isAdmin ? <Reports /> : <Navigate to="/login" />} />
+          <Route path="/aboutus" element={<AboutUs />} />
           {/* Optional: Add /about or /demo pages later */}
         </Routes>
       </Container>
