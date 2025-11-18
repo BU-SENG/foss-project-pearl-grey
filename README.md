@@ -1,1 +1,16 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/tfYzIujW)
+# Material Donation Tracker (Web)
+
+This is a small React + Vite prototype of the Material Donation Tracker UI described in the requirements.
+
+Quick start (Windows PowerShell):
+
+```powershell
+cd "c:\Users\thelumisijuade\Desktop\foss-project-pearl-grey\web"
+npm install
+npm run dev
+```
+
+Notes:
+- The admin login is local and uses password `admin` for demonstration only.
+- Data is in-memory (no backend). For production, connect to a secure API and PostgreSQL.
+- You can export CSV via the Reports screen; print-to-PDF can be used for PDFs.
