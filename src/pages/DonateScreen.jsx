@@ -1,5 +1,17 @@
 import React from 'react';
-import { Container, Typography, Box, Button, Stack, Paper, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import {
+  Container,
+  Typography,
+  Box,
+  Button,
+  Stack,
+  Paper,
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText
+} from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { Link } from 'react-router-dom';
@@ -8,8 +20,8 @@ export default function DonateScreen() {
   return (
     <Box sx={{ bgcolor: '#f9f9f9', minHeight: '100vh', py: 8 }}>
       <Container maxWidth="md">
-
         <Paper elevation={0} sx={{ p: { xs: 4, md: 8 }, borderRadius: 4, bgcolor: 'white', boxShadow: 3 }}>
+
           <Box textAlign="center" mb={6}>
             <VolunteerActivismIcon sx={{ fontSize: 80, color: '#d32f2f', mb: 2 }} />
             <Typography variant="h3" fontWeight={900} color="#111">
@@ -22,12 +34,12 @@ export default function DonateScreen() {
 
           <Divider sx={{ my: 5 }} />
 
-          {/* Donation Options */}
           <Typography variant="h5" fontWeight="bold" gutterBottom>
             How Would You Like to Donate?
           </Typography>
 
           <Stack spacing={4} mt={4}>
+
             {/* Material Donation */}
             <Paper variant="outlined" sx={{ p: 4, borderRadius: 3, '&:hover': { borderColor: '#d32f2f' } }}>
               <Typography variant="h6" fontWeight="bold" color="#d32f2f">
@@ -36,6 +48,7 @@ export default function DonateScreen() {
               <Typography mt={2} color="text.secondary">
                 Drop off new or gently used items at our center or arrange pickup.
               </Typography>
+
               <List dense>
                 <ListItem>
                   <ListItemIcon><CheckCircleIcon color="success" /></ListItemIcon>
@@ -54,15 +67,16 @@ export default function DonateScreen() {
                   <ListItemText primary="Hygiene Products" />
                 </ListItem>
               </List>
+
               <Button
                 component={Link}
-                to="/login"
-                variant="outlined"
+                to="/contact-donation"
+                variant="contained"
                 size="large"
                 fullWidth
-                sx={{ mt: 2 }}
+                sx={{ mt: 3, bgcolor: '#d32f2f', '&:hover': { bgcolor: '#b71c1c' } }}
               >
-                Contact Us to Arrange Drop-off
+                Arrange Drop-off / Pickup
               </Button>
             </Paper>
 
@@ -85,15 +99,16 @@ export default function DonateScreen() {
 
               <Button
                 component={Link}
-                to="/login"
+                to="/contact-donation"
                 variant="contained"
                 size="large"
                 fullWidth
-                sx={{ mt: 3, bgcolor: '#1976d2' }}
+                sx={{ mt: 3, bgcolor: '#1976d2', '&:hover': { bgcolor: '#1565c0' } }}
               >
-                I’ve Made a Transfer → Notify Admin
+                I’ve Made a Transfer → Notify Us
               </Button>
             </Paper>
+
           </Stack>
 
           <Box textAlign="center" mt={6}>
@@ -104,6 +119,7 @@ export default function DonateScreen() {
               Questions? Email us at donations@carebridge.org
             </Typography>
           </Box>
+
         </Paper>
       </Container>
     </Box>
