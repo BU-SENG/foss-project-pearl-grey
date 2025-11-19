@@ -84,6 +84,8 @@ export default function App() {
               sx={{
                 bgcolor: 'black',
                 color: 'white',
+                marginLeft: 0,
+                marginright: 600,
                 px: 5,
                 py: 1.5,
                 borderRadius: 3,
