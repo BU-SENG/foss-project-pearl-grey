@@ -26,6 +26,7 @@ import Inventory from './pages/Inventory';
 import Reports from './pages/Reports';
 import AboutUs from './pages/Aboutus';
 import DonateScreen from './pages/DonateScreen';
+import Programs from './pages/Programs';
 
 export default function App() {
   const { isAdmin, user, logout } = useDonation();
@@ -145,6 +146,7 @@ export default function App() {
           <Route path="/inventory" element={isAdmin ? <Inventory /> : <Navigate to="/login" />} />
           <Route path="/reports" element={isAdmin ? <Reports /> : <Navigate to="/login" />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/programs" element={<Programs />} />
           <Route path="/contact-donation" element={<ContactDonation />} />
         </Routes>
       </Container>
