@@ -28,7 +28,7 @@ export default function Programs() {
   return (
     <Box sx={{ bgcolor: '#fafafa', py: { xs: 6, md: 10 } }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" sx={{ fontWeight: 800, mb: 3 }}>Our Programs</Typography>
+        <Typography variant="h3" sx={{ fontWeight: 800, mb: 3 }}>Our Program</Typography>
         <Typography sx={{ color: '#555', mb: 6 }}>We run a range of programmes that target the root causes of poverty and vulnerability. Learn more about each programme below and how your donation helps.</Typography>
 
         <Grid container spacing={4}>
