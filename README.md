@@ -5,7 +5,7 @@ This is a small React + Vite prototype of the Material Donation Tracker UI descr
 Quick start (Windows PowerShell):
 
 ```powershell
-cd "c:\Users\thelumisijuade\Desktop\foss-project-pearl-grey\web"
+cd "c:\Users\yourlaptopusername\Desktop\foss-project-pearl-grey\web"
 npm install
 npm run dev
 ```
