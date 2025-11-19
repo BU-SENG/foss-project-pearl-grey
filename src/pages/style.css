@@ -1,0 +1,118 @@
+main {
+    /* margin-top: 5px; */
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+
+}
+.topColumn,
+.bottomColumn {
+    display: flex;
+    gap: 10px;
+    
+} 
+
+section{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    padding: 30px; 
+    border: 1px solid #e9e9e9; 
+    border-radius: 12px; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    max-width: 300px; 
+    min-width: 300px;
+    margin: 7px; /* for demonstration, centers it */
+    font-family: sans-serif;
+}
+
+/* header */
+header {
+    /* width: 100%;  <-- Block elements differ to 100% by default, but you can keep this */
+    /* Remove fixed height so text fits */
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 'start' is valid, but 'flex-start' is safer */
+    justify-content: center;
+    z-index: 1000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0 20px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #020202;
+    line-height: 1.2; /* Adds a little breathing room between lines */
+}
+
+header p {
+    margin: 5px 0 0 0; /* Added 5px top margin to separate it from the H1 */
+    padding: 0 20px;
+    font-size: 18px;
+    color: #555555;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* text1 */
+section p {
+    font-size: 16px;
+    color: #333333;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+section .text2{
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* section buttons */
+section button {
+    background-color: #fefefe;
+    color: rgb(14, 230, 144);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    border: 2px solid rgb(14, 230, 144);
+}
+
+section button:hover {
+    background-color: rgb(14, 230, 144);
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+/* footer */
+footer {
+    /* margin-top: 5px; */
+    padding: 20px;
+    text-align: center;
+}
+
+footer button {
+    background-color: #0aaf49;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+footer button:hover {
+    background-color: #088a3e;
+    transition: o.2s ease-in-out;
+}

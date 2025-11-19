@@ -17,6 +17,8 @@ import DonationForm from './pages/DonationForm';
 import DistributionForm from './pages/DistributionForm';
 import Inventory from './pages/Inventory';
 import Reports from './pages/Reports';
+import Programs from './pages/Programs';
+
 
 export default function App() {
   const { isAdmin, logout } = useDonation();
@@ -58,13 +60,13 @@ export default function App() {
             <Button component={Link} to="/" sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
               Home
             </Button>
-            <Button component={Link} to="/about" sx={{ pathname: '/' }} sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
+            <Button component={Link} to="/about" sx={{ pathname: '/', fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
               About Us
             </Button>
             <Button component={Link} to={isAdmin ? "/admin" : "/login"} sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
               Admin
             </Button>
-            <Button component={Link} to={isAdmin ? "/admin" : "/login"} sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
+            <Button component={Link} to={isAdmin ? "/admin" : "/Programs"} sx={{ fontSize: '1.1rem', fontWeight: 500, color: 'black' }}>
               Programs
             </Button>
           </Stack>
@@ -78,6 +80,8 @@ export default function App() {
             sx={{
               bgcolor: 'black',
               color: 'white',
+              marginRight: '0px',
+              marginLeft: '600px',
               px: 4,
               py: 1.5,
               borderRadius: 2,
@@ -220,6 +224,8 @@ export default function App() {
           <Route path="/inventory" element={isAdmin ? <Inventory /> : <Navigate to="/login" />} />
           <Route path="/reports" element={isAdmin ? <Reports /> : <Navigate to="/login" />} />
           {/* Optional: Add /about or /demo pages later */}
+          <Route path="/Programs" element={<Programs />} />
+          
         </Routes>
       </Container>
     </>
