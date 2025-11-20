@@ -1,6 +1,6 @@
 
 
-package com.example.pearlgrey.exception.;
+package com.example.pearlgrey.exception;
 
 import lombok.*;
 
