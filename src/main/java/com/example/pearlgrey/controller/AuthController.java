@@ -1,6 +1,7 @@
 package com.example.pearlgrey.controller;
 
 import com.example.pearlgrey.dto.LoginRequest;
+import com.example.pearlgrey.dto.RegisterRequest;
 import com.example.pearlgrey.dto.LoginResponse;
 import com.example.pearlgrey.service.AuthService;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,14 @@ public class AuthController {
 		System.out.println("AuthController.login received username='" + request.getUsername() + "'");
 		String token = authService.login(request.getUsername(), request.getPassword());
 		System.out.println("AuthController.login succeeded for user='" + request.getUsername() + "'");
+		return ResponseEntity.ok(new LoginResponse(token));
+	}
+
+	@PostMapping("/register")
+	public ResponseEntity<LoginResponse> register(@RequestBody RegisterRequest request) {
+		System.out.println("AuthController.register received username='" + request.getUsername() + "'");
+		String token = authService.register(request.getUsername(), request.getPassword());
+		System.out.println("AuthController.register succeeded for user='" + request.getUsername() + "'");
 		return ResponseEntity.ok(new LoginResponse(token));
 	}
 }

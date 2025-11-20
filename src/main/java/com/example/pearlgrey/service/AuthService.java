@@ -63,6 +63,22 @@ public class AuthService {
         throw new RuntimeException("Invalid credentials");
     }
 
+    public String register(String username, String password) {
+        System.out.println("AuthService.register called for user='" + username + "'");
+        var opt = adminRepository.findByUsername(username);
+        if (opt.isPresent()) {
+            System.out.println("Registration failed: username already exists='" + username + "'");
+            throw new RuntimeException("Username already exists");
+        }
+
+        Admin admin = new Admin();
+        admin.setUsername(username);
+        admin.setPassword(passwordEncoder.encode(password));
+        adminRepository.save(admin);
+        System.out.println("AuthService.register succeeded for user='" + username + "'");
+        return generateToken(username);
+    }
+
     public String generateToken(String username) {
         Date now = new Date();
         Date expiry = new Date(now.getTime() + jwtExpirationMs);
