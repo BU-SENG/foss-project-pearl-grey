@@ -1,6 +1,6 @@
 # Material Donation Tracker (Web)
 
-This is a small React + Vite prototype of the Material Donation Tracker UI described in the requirements.
+This is a small React + Vite prototype of the  Donation Tracker UI described in the requirements.
 
 Quick start (Windows PowerShell):
 
