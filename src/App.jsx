@@ -37,7 +37,7 @@ export default function App() {
       <CssBaseline />
 
       <AppBar position="sticky" elevation={0} sx={{ bgcolor: 'white', color: 'black', borderBottom: '1px solid #e0e0e0' }}>
-        <Toolbar sx={{ justifyContent: 'space-between', py: 2 }}>
+        <Toolbar sx={{ justifyContent: 'space-between', py: 2, width: '100%' }}>
 
           <Box component={Link} to="/" sx={{ display: 'flex' }}>
             <img
@@ -56,26 +56,6 @@ export default function App() {
 
           <Stack direction="row" spacing={4} alignItems="center">
 
-            {!user && (
-              <Typography
-                component={Link}
-                to="/login"
-                state={{ from: location }}
-                sx={loginLinkStyle}
-              >
-                Login
-              </Typography>
-            )}
-
-            {user && (
-              <Typography
-                onClick={logout}
-                sx={logoutStyle}
-              >
-                Logout
-              </Typography>
-            )}
-
             <Button
               variant="contained"
               size="large"
@@ -84,8 +64,6 @@ export default function App() {
               sx={{
                 bgcolor: 'black',
                 color: 'white',
-                marginLeft: 0,
-                marginright: 600,
                 px: 5,
                 py: 1.5,
                 borderRadius: 3,
