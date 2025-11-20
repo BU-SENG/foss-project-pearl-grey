@@ -1,6 +1,4 @@
-That's a great request\! I'll update your `README.md` to reflect a modern **Java Spring Boot** backend, using **MySQL** for the database, and adjusting the setup commands accordingly.
 
-Here is the updated `README.md` file:
 
 -----
 
