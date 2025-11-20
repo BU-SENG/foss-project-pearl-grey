@@ -4,8 +4,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    
-
 }
 .topColumn,
 .bottomColumn {
@@ -24,8 +22,8 @@ section{
     border-radius: 12px; 
     background-color: #ffffff; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
-    max-width: 300px; 
-    min-width: 300px;
+    max-width: 200px; 
+    min-width: 400px;
     margin: 7px; /* for demonstration, centers it */
     font-family: sans-serif;
 }
