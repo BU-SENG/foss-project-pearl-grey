@@ -1,6 +1,12 @@
-## Donation Tracker
+That's a great request\! I'll update your `README.md` to reflect a modern **Java Spring Boot** backend, using **MySQL** for the database, and adjusting the setup commands accordingly.
 
-This is a full-stack web application designed to track donations. The frontend is built with **React**, and the backend is powered by **Node.js** (using **Express**). Data is stored in a **MongoDB** database.
+Here is the updated `README.md` file:
+
+-----
+
+##  Donation Tracker
+
+This is a full-stack web application designed to track donations. The frontend is built with **React**, and the backend is powered by **Java** using the **Spring Boot** framework. Data is stored in a **MySQL** database.
 
 -----
 
@@ -13,7 +19,7 @@ This is a full-stack web application designed to track donations. The frontend i
 
 -----
 
-##  Tech Stack
+## Tech Stack
 
 ### Frontend (Client)
 
@@ -24,10 +30,11 @@ This is a full-stack web application designed to track donations. The frontend i
 
 ### Backend (Server)
 
-  * **Node.js:** JavaScript runtime environment.
-  * **Express:** Minimalist web application framework for Node.js.
-  * **MongoDB:** NoSQL database for data storage.
-  * **Mongoose:** MongoDB object data modeling (ODM) for Node.js.
+  * **Java (JDK 17+):** The programming language.
+  * **Spring Boot:** Framework for building the RESTful API and handling dependency injection.
+  * **Spring Data JPA:** Used for interacting with the MySQL database.
+  * **MySQL:** Relational database for data persistence.
+  * **Maven/Gradle:** Build and dependency management tool.
   * **JWT (JSON Web Tokens):** For user authentication.
 
 -----
@@ -36,13 +43,14 @@ This is a full-stack web application designed to track donations. The frontend i
 
 Follow these steps to get a local copy up and running.
 
-###  Prerequisites
+### Prerequisites
 
-  * Node.js (LTS version recommended)
-  * npm (or yarn)
-  * MongoDB instance (local or cloud-hosted like MongoDB Atlas)
+  * **Java Development Kit (JDK) 17+**
+  * **Maven** (or **Gradle** if your project uses it)
+  * **Node.js** and **npm** (for the React frontend)
+  * **MySQL Server** instance (local or remote)
 
-### Installation and Setup
+###  Installation and Setup
 
 #### 1\. Clone the repository
 
@@ -51,24 +59,31 @@ git clone [Your Repository URL]
 cd donation-tracker
 ```
 
-#### 2\. Backend Setup
+#### 2\. Backend Setup (Java/Spring Boot)
 
-Navigate to the server directory, install dependencies, and create a `.env` file.
+Navigate to the server directory and configure your database connection.
 
 ```bash
 cd server
-npm install
 ```
 
-Create a `.env` file in the `server` directory with the following variables:
+You must update the **`application.properties`** or **`application.yml`** file in the `server/src/main/resources` directory with your MySQL connection details.
 
-```
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=a_very_secret_key
+**Example `application.properties` configuration:**
+
+```properties
+# Server configuration
+server.port=8080
+
+# MySQL Database configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/donation_db?useSSL=false
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 ```
 
-#### 3\. Frontend Setup
+#### 3\. Frontend Setup (React)
 
 Navigate to the client directory and install dependencies.
 
@@ -80,8 +95,8 @@ npm install
 Create a `.env` file in the `client` directory:
 
 ```
-# Replace with your actual backend URL (e.g., http://localhost:5000)
-REACT_APP_API_URL=http://localhost:5000/api
+# Replace with your actual backend URL (default Spring Boot port is 8080)
+REACT_APP_API_URL=http://localhost:8080/api
 ```
 
 -----
@@ -90,14 +105,17 @@ REACT_APP_API_URL=http://localhost:5000/api
 
 ### 1\. Start the Backend Server
 
-From the `server` directory:
+From the `server` directory, use the Maven Wrapper to build and run the application.
 
 ```bash
-npm start
-# or use nodemon for development: npm run dev
+# Build the project (if needed)
+./mvnw clean install 
+
+# Run the application
+./mvnw spring-boot:run
 ```
 
-The backend server will run on the port specified in your `.env` file (default: `http://localhost:5000`).
+The backend server will run on the default Spring Boot port (default: `http://localhost:8080`).
 
 ### 2\. Start the Frontend Application
 
@@ -123,8 +141,4 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 -----
 
-
-
------
-
-Would you like me to generate a simple example structure for the **server** or **client** file organization?
+Would you like me to provide an example of the basic **Spring Boot project structure** for the `server` directory?
